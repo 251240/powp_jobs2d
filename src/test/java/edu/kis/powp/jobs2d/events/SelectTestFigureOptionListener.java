@@ -3,6 +3,10 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import edu.kis.powp.jobs2d.Job2dDriver;
+import edu.kis.powp.jobs2d.command.CircleCommandFactory;
+import edu.kis.powp.jobs2d.command.DriverCommand;
+import edu.kis.powp.jobs2d.command.RectangleCommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
@@ -20,6 +24,14 @@ public class SelectTestFigureOptionListener implements ActionListener {
 			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
 		}else if(e.getActionCommand().equals("Figure Joe 2")){
 			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
+		}else if(e.getActionCommand().equals("Circle")){
+			Job2dDriver driver = driverManager.getCurrentDriver();
+			DriverCommand command = CircleCommandFactory.create(driver, 0, 0, 80);
+			command.execute();
+		}else if(e.getActionCommand().equals("Rectangle")){
+			Job2dDriver driver = driverManager.getCurrentDriver();
+			DriverCommand command = RectangleCommandFactory.create(driver, 0, 0, 100, 60);
+			command.execute();
 		}
 	}
 }

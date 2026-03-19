@@ -15,6 +15,9 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.legacy.drawer.shape.LineFactory;
+import edu.kis.powp.jobs2d.command.DriverCommand;
+import edu.kis.powp.jobs2d.command.RectangleCommandFactory;
+import edu.kis.powp.jobs2d.command.CircleCommandFactory;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -30,6 +33,8 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+		application.addTest("Rectangle", selectTestFigureOptionListener);
+		application.addTest("Circle", selectTestFigureOptionListener);
 	}
 
 	/**
